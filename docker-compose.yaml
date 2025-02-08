@@ -4,7 +4,6 @@ services:
     build: .
     environment:
       - APP_NAME=APP1
-      - PORT=3000
     ports:
       - "3001:3000"  # Maps host port 3001 to container port 3000
 
@@ -12,14 +11,12 @@ services:
     build: .
     environment:
       - APP_NAME=APP2
-      - PORT=3001  # Example of changing internal port for app2
     ports:
-      - "3002:3001"  # Mapping container port 3001 to host port 3002
+      - "3002:3000"  # Mapping container port 3001 to host port 3002
 
   app3:
     build: .
     environment:
       - APP_NAME=APP3
-      - PORT=3002  # Example of changing internal port for app3
     ports:
-      - "3003:3002"  # Mapping container port 3002 to host port 3003
+      - "3003:3000"  # Mapping container port 3002 to host port 3003
